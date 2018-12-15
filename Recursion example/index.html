@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title -->
+    <title>Report</title>
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="Files/Styles/index.css" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="Files/Scripts/index.js"></script>
+
+    <!-- Refrences | Extentions -->
+    <script type="text/javascript" src="Files/Refrences/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="Files/Refrences/jquery-ui.js"></script>
+    <script type="text/javascript" src="Files/Refrences/json2.js"></script>
+
+    <!-- Addons (Tomer's Personal Libary) -->
+    <script type="text/javascript" src="Files/Scripts/Addons.js"></script>
+    <script type="text/javascript" src="Files/Font-Awesome/Scripts/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="Files/Styles/Addons.css" />
+    <link rel="stylesheet" type="text/css" href="Files/Font-Awesome/Styles/all.css" />
+
+    <!-- Meta data -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <!-- First Execute -->
+    <script>$(start)</script>
+</head>
+<body>
+    <div class="header" light-shadow>
+        <div class="header-text">Recursion</div>
+    </div>
+    <div class="stages">
+        <div class="stage">
+            <div class="stage-title" icon="info">Introduction</div>
+            <div class="stage-content">
+                <div class="stage-text">In computer science, a recursive function is a function re-calling itself until a certain criteria is met.</div>
+            </div>
+            <div class="stage-content-info">
+                <div class="stage-label">Other types of recursion</div>
+                <div class="stage-text">can be found not only in computer science but also in math, for example in the -</div>
+
+                <div class="stage-label">Fibonacci-sequence</div>
+                <div class="stage-subtext">each index is just the sum of the two preceding digits,</div>
+                <img src="Files/Images/Sequence1.png" class="stage-image" alt="1, 1, 2, 3, 5, 8, 13..." />
+                <div class="stage-subtext">and a value for an index can simply be obtained as</div>
+                <img src="Files/Images/Sequence2.png" class="stage-image" alt="n_i = n_(i-1) + n_(i-2)" />
+
+                <div class="stage-label">History</div>
+                <div class="stage-text">recursion can be traced back to the 19th century, decades before any modern computers, although different from one another they do share their similarities.</div>
+            </div>
+        </div>
+
+        <div class="stage">
+            <div class="stage-title" icon="chalkboard-teacher">Overview</div>
+            <div class="stage-content">
+                <div class="stage-label">We'll demonstrate</div>
+                <div class="stage-text">an objective use with a person class and a family tree.</div>
+                <div class="gap-2"></div>
+
+                <div class="stage-label">We'll define</div>
+                <div class="stage-text">a matching recursive function to the family tree problem.</div>
+                <div class="gap-2"></div>
+
+                <div class="stage-label">We'll identify</div>
+                <div class="stage-text">an interactable recursive function visualization.</div>
+            </div>
+        </div>
+
+        <div class="stage">
+            <div class="stage-title" icon="tree">Example - Family tree</div>
+            <div class="stage-content">
+                <div class="stage-label">Finding 'Shlomo'</div>
+                <div class="stage-text">we'll look for 'shlomo' in an array of humans with human children using a -</div>
+                <div class="gap-2"></div>
+
+                <div class="stage-label">Recursive function procedure</div>
+                <div class="stage-text">we'll define a function that receives a human and checks the criteria</div>
+                <div class="code-template">human.name is 'Shlomo'</div>
+                <div class="stage-label">else</div>
+                <div class="stage-subtext">pass each individual child of the human to the current function (re-calling it).</div>
+                <div class="gap-2"></div>
+
+                <div class="stage-label">Resulting in a</div>
+                <div class="stage-text">loop that getting deeper and deeper within, until 'Shlomo' is found.</div>
+            </div>
+        </div>
+
+        <div class="stage">
+            <div class="stage-title" icon="male">Python - Human class</div>
+            <div class="stage-content">
+                <div class="stage-label">We'll define a human class</div>
+                <div class="stage-text">with a name and children fields.</div>
+                <div class="code-template">
+                    class Human:
+                    \T1def __init__(self, name):
+                    \T2self.name = name
+                    \T2self.children = children
+                </div>
+
+                <div class="stage-label">So now</div>
+                <div class="stage-text">we can define a particular human as</div>
+                <div class="code-template">Human('Bob the 3rd')</div>
+
+            </div>
+            <div class="stage-content-info">
+                <div class="stage-label">Step by step explanation</div>
+                <div class="code-template">class Human:</div>
+                <div class="stage-subtext">assiging an identity to our class ("human").</div>
+
+                <div class="code-template">def __init__(self, name)</div>
+                <div class="stage-subtext">__init__ is the class constructor (a function that constructs an instance).</div>
+                <div class="stage-subtext">self is a reference to the current instance.</div>
+
+                <div class="code-template">
+                    self.name = name
+                    self.children = children
+                </div>
+                <div class="stage-subtext">assigning current instance name & children fields respectively.</div>
+
+            </div>
+        </div>
+
+        <div class="stage last">
+            <div class="stage-title" icon="cubes">Visualization - family tree</div>
+            <div class="stage-content">
+                <div class="stage-label">Hello</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Scripts\index.ts
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\CSS\fa-svg-with-js.css
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\CSS\fontawesome-all.css
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\fa-svg-with-js.css
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\fontawesome-all.css
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\fontawesome-all.js
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Scripts\all.js
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Scripts\fontawesome-all.js
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\all.css
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-brands-400.svg
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-light-300.svg
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-regular-400.svg
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-solid-900.svg
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Refrences\jquery-1.11.2.js
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Refrences\jquery-ui.js
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Refrences\json2.js
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Styles\index.css
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Arimo-Regular.ttf
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-brands-400.eot
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-brands-400.ttf
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-brands-400.woff
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-brands-400.woff2
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-light-300.eot
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-light-300.ttf
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-light-300.woff
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-light-300.woff2
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-regular-400.eot
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-regular-400.ttf
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-regular-400.woff
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-regular-400.woff2
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-solid-900.eot
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-solid-900.ttf
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-solid-900.woff
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Font-Awesome\Styles\webfonts\fa-solid-900.woff2
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Recursion example.dll.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Recursion example.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Recursion example.pdb
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\csc.exe
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\csc.exe.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\csc.rsp
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\csi.exe
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\csi.exe.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\csi.rsp
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.AppContext.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Console.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.IO.Compression.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Security.Claims.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.ValueTuple.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\vbc.exe
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\vbc.exe.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\vbc.rsp
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\VBCSCompiler.exe
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\obj\Release\Recursion example.csprojAssemblyReference.cache
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\obj\Release\Recursion example.csproj.CoreCompileInputs.cache
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\obj\Release\Recursion example.csproj.CopyComplete
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\obj\Release\Recursion example.dll
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\obj\Release\Recursion example.pdb
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Scripts\Addons.ts
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Refrences\jquery.d.ts
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Files\Styles\Addons.css
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Web.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Web.Debug.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Web.Release.config
+C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\index.html

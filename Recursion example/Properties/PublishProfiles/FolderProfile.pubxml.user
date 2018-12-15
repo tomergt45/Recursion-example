@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Tomer\Desktop\Projects\Recursion example\Recursion example\bin\Release\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Files/Font-Awesome/Arimo-Regular.ttf">
+      <publishTime>10/21/2018 21:26:30</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/CSS/fa-svg-with-js.css">
+      <publishTime>10/21/2018 21:26:30</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/CSS/fontawesome-all.css">
+      <publishTime>10/21/2018 21:26:31</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/fa-svg-with-js.css">
+      <publishTime>10/21/2018 21:26:29</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/fontawesome-all.css">
+      <publishTime>10/21/2018 21:26:29</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/fontawesome-all.js">
+      <publishTime>10/21/2018 21:26:30</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Scripts/all.js">
+      <publishTime>10/21/2018 21:26:33</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Scripts/fontawesome-all.js">
+      <publishTime>10/21/2018 21:26:33</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/all.css">
+      <publishTime>10/21/2018 21:26:33</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-brands-400.eot">
+      <publishTime>10/21/2018 21:26:45</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-brands-400.svg">
+      <publishTime>10/21/2018 21:26:45</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-brands-400.ttf">
+      <publishTime>10/21/2018 21:26:44</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-brands-400.woff">
+      <publishTime>10/21/2018 21:26:43</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-brands-400.woff2">
+      <publishTime>10/21/2018 21:26:43</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-light-300.eot">
+      <publishTime>10/21/2018 21:26:42</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-light-300.svg">
+      <publishTime>10/21/2018 21:26:42</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-light-300.ttf">
+      <publishTime>10/21/2018 21:26:40</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-light-300.woff">
+      <publishTime>10/21/2018 21:26:38</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-light-300.woff2">
+      <publishTime>10/21/2018 21:26:39</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-regular-400.eot">
+      <publishTime>10/21/2018 21:26:38</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-regular-400.svg">
+      <publishTime>10/21/2018 21:26:38</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-regular-400.ttf">
+      <publishTime>10/21/2018 21:26:37</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-regular-400.woff">
+      <publishTime>10/21/2018 21:26:36</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-regular-400.woff2">
+      <publishTime>10/21/2018 21:26:36</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-solid-900.eot">
+      <publishTime>10/21/2018 21:26:36</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-solid-900.svg">
+      <publishTime>10/21/2018 21:26:35</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-solid-900.ttf">
+      <publishTime>10/21/2018 21:26:35</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-solid-900.woff">
+      <publishTime>10/21/2018 21:26:34</publishTime>
+    </File>
+    <File Include="bin/Files/Font-Awesome/Styles/webfonts/fa-solid-900.woff2">
+      <publishTime>10/21/2018 21:26:34</publishTime>
+    </File>
+    <File Include="bin/Files/Refrences/jquery-1.11.2.js">
+      <publishTime>10/21/2018 21:26:47</publishTime>
+    </File>
+    <File Include="bin/Files/Refrences/jquery-ui.js">
+      <publishTime>10/21/2018 21:26:48</publishTime>
+    </File>
+    <File Include="bin/Files/Refrences/jquery.d.ts">
+      <publishTime>11/12/2018 18:41:32</publishTime>
+    </File>
+    <File Include="bin/Files/Refrences/json2.js">
+      <publishTime>10/21/2018 21:26:46</publishTime>
+    </File>
+    <File Include="bin/Files/Scripts/Addons.ts">
+      <publishTime>11/12/2018 18:41:47</publishTime>
+    </File>
+    <File Include="bin/Files/Scripts/index.ts">
+      <publishTime>12/06/2018 18:27:31</publishTime>
+    </File>
+    <File Include="bin/Files/Styles/Addons.css">
+      <publishTime>12/06/2018 18:34:02</publishTime>
+    </File>
+    <File Include="bin/Files/Styles/index.css">
+      <publishTime>12/06/2018 18:33:51</publishTime>
+    </File>
+    <File Include="bin/index.html">
+      <publishTime>12/06/2018 18:42:58</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/Recursion example.dll">
+      <publishTime>12/06/2018 18:50:39</publishTime>
+    </File>
+    <File Include="bin/Recursion example.pdb">
+      <publishTime>12/06/2018 18:50:39</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.AccessControl.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/Web.config">
+      <publishTime>12/06/2018 18:41:34</publishTime>
+    </File>
+    <File Include="bin/Web.Debug.config">
+      <publishTime>11/12/2018 18:22:32</publishTime>
+    </File>
+    <File Include="bin/Web.Release.config">
+      <publishTime>11/12/2018 18:22:32</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Arimo-Regular.ttf">
+      <publishTime>10/21/2018 21:26:30</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/CSS/fa-svg-with-js.css">
+      <publishTime>10/21/2018 21:26:30</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/CSS/fontawesome-all.css">
+      <publishTime>10/21/2018 21:26:31</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/fa-svg-with-js.css">
+      <publishTime>10/21/2018 21:26:29</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/fontawesome-all.css">
+      <publishTime>10/21/2018 21:26:29</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/fontawesome-all.js">
+      <publishTime>10/21/2018 21:26:30</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Scripts/all.js">
+      <publishTime>10/21/2018 21:26:33</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Scripts/fontawesome-all.js">
+      <publishTime>10/21/2018 21:26:33</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/all.css">
+      <publishTime>10/21/2018 21:26:33</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-brands-400.eot">
+      <publishTime>10/21/2018 21:26:45</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-brands-400.svg">
+      <publishTime>10/21/2018 21:26:45</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-brands-400.ttf">
+      <publishTime>10/21/2018 21:26:44</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-brands-400.woff">
+      <publishTime>10/21/2018 21:26:43</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-brands-400.woff2">
+      <publishTime>10/21/2018 21:26:43</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-light-300.eot">
+      <publishTime>10/21/2018 21:26:42</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-light-300.svg">
+      <publishTime>10/21/2018 21:26:42</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-light-300.ttf">
+      <publishTime>10/21/2018 21:26:40</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-light-300.woff">
+      <publishTime>10/21/2018 21:26:38</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-light-300.woff2">
+      <publishTime>10/21/2018 21:26:39</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-regular-400.eot">
+      <publishTime>10/21/2018 21:26:38</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-regular-400.svg">
+      <publishTime>10/21/2018 21:26:38</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-regular-400.ttf">
+      <publishTime>10/21/2018 21:26:37</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-regular-400.woff">
+      <publishTime>10/21/2018 21:26:36</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-regular-400.woff2">
+      <publishTime>10/21/2018 21:26:36</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-solid-900.eot">
+      <publishTime>10/21/2018 21:26:36</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-solid-900.svg">
+      <publishTime>10/21/2018 21:26:35</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-solid-900.ttf">
+      <publishTime>10/21/2018 21:26:35</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-solid-900.woff">
+      <publishTime>10/21/2018 21:26:34</publishTime>
+    </File>
+    <File Include="Files/Font-Awesome/Styles/webfonts/fa-solid-900.woff2">
+      <publishTime>10/21/2018 21:26:34</publishTime>
+    </File>
+    <File Include="Files/Refrences/jquery-1.11.2.js">
+      <publishTime>10/21/2018 21:26:47</publishTime>
+    </File>
+    <File Include="Files/Refrences/jquery-ui.js">
+      <publishTime>10/21/2018 21:26:48</publishTime>
+    </File>
+    <File Include="Files/Refrences/json2.js">
+      <publishTime>10/21/2018 21:26:46</publishTime>
+    </File>
+    <File Include="Files/Scripts/Addons.js">
+      <publishTime>12/06/2018 18:37:55</publishTime>
+    </File>
+    <File Include="Files/Scripts/Addons.js.map">
+      <publishTime>12/06/2018 18:37:55</publishTime>
+    </File>
+    <File Include="Files/Scripts/index.js">
+      <publishTime>12/06/2018 18:37:55</publishTime>
+    </File>
+    <File Include="Files/Scripts/index.js.map">
+      <publishTime>12/06/2018 18:37:55</publishTime>
+    </File>
+    <File Include="Files/Styles/Addons.css">
+      <publishTime>12/06/2018 18:34:02</publishTime>
+    </File>
+    <File Include="Files/Styles/index.css">
+      <publishTime>12/06/2018 18:33:51</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>12/06/2018 18:42:58</publishTime>
+    </File>
+    <File Include="recursion.html">
+      <publishTime>12/06/2018 18:39:31</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/06/2018 18:41:34</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

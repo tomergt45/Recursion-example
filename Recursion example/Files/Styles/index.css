@@ -1,0 +1,155 @@
+﻿/* Variables */
+/* General */
+html {
+  zoom: 1.1; }
+  html body {
+    background: #fff; }
+
+/* Header */
+.header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  width: 100%;
+  background: #2196F3;
+  z-index: 2; }
+  .header .header-text {
+    color: #fff;
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: 500; }
+
+/* Stages */
+.stages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  position: relative; }
+  .stages .stage {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    width: 100%;
+    max-width: 450px; }
+    .stages .stage > * {
+      width: 100%; }
+    .stages .stage.last {
+      position: sticky;
+      top: 0;
+      min-height: 55vh; }
+    .stages .stage .stage-title {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 54px;
+      padding: 0.5em 1em;
+      background: #fff;
+      z-index: 1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      color: #212121;
+      text-transform: capitalize;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      line-height: 2.5; }
+      .stages .stage .stage-title .stage-title-icon {
+        margin-right: 1em;
+        color: #2196F3; }
+      .stages .stage .stage-title .stage-dialog-button {
+        border-radius: 50%;
+        font-size: 12px;
+        padding-bottom: 0.3em;
+        color: rgba(0, 0, 0, 0.9);
+        display: inline-block;
+        cursor: pointer;
+        position: absolute;
+        top: 1.2em;
+        bottom: 1em;
+        right: 1em;
+        height: 2.2em;
+        width: 2.2em;
+        text-align: center;
+        vertical-align: middle; }
+    .stages .stage .stage-content {
+      animation: fadeIn 1s forwards, slideMarginTopOut 0.35s cubic-bezier(0.03, 0, 0.25, 0.98) forwards;
+      opacity: 1;
+      margin-top: 35%;
+      padding: 1em; }
+      .stages .stage .stage-content .stage-label {
+        background: #fff;
+        width: 100%;
+        font-size: 16px;
+        color: #424242;
+        font-size: 15px;
+        line-height: 2; }
+        .stages .stage .stage-content .stage-label:first-child {
+          padding-top: 0 !important; }
+      .stages .stage .stage-content .stage-text {
+        color: #757575;
+        font-size: 12px;
+        line-height: 1.5; }
+      .stages .stage .stage-content .stage-subtext {
+        font-size: 10px;
+        line-height: 1.5;
+        color: #757575; }
+      .stages .stage .stage-content .stage-image {
+        padding: 1em 0;
+        width: 10em; }
+    .stages .stage .stage-content-info {
+      display: none; }
+  .stages .stage-content-info {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    background: #fff;
+    z-index: 1; }
+    .stages .stage-content-info.hide .stage-content {
+      animation: fadeOut 0.25s forwards, slideMarginTopIn 0.25s cubic-bezier(0.03, 0, 0.25, 0.98) forwards;
+      margin-top: 15%; }
+
+/* Code container */
+.code-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  padding: 0.5em;
+  margin: 1em 0em;
+  cursor: default;
+  transition: .2s box-shadow;
+  overflow-x: auto;
+  width: 100%;
+  cursor: pointer; }
+  .code-container .code-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.075); }
+    .code-container .code-line:last-child {
+      border: none; }
+    .code-container .code-line .code-line-index {
+      color: #2196F3;
+      font-size: 10px;
+      width: 20px;
+      user-select: none; }
+    .code-container .code-line .code-line-text {
+      margin: 0;
+      flex: 1;
+      font-size: 12px;
+      display: flex; }
+  .code-container .code-container-bottom-text {
+    text-align: right;
+    font-size: 8px;
+    margin: 0.5em;
+    margin-bottom: 0.2em;
+    color: rgba(0, 0, 0, 0.4); }
+
+/* Media queries */
+@media (min-width: 1024px) {
+  html {
+    zoom: 1.2; }
+  html[desktop] {
+    zoom: 1.6; }
+  html[desktop] .stage {
+    max-width: 700px; } }

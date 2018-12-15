@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Files/Styles/Addons.css",
+    "inputFile": "Files/Styles/Addons.scss"
+  },
+  {
+    "outputFile": "Files/Styles/index.css",
+    "inputFile": "Files/Styles/index.scss"
+  }
+]

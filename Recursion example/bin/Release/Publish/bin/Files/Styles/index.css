@@ -1,0 +1,51 @@
+﻿/* General */
+body {
+    background: #fff;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0px;
+    background: #2196F3;
+    z-index: 2;
+}
+
+
+.header .header-text {
+    color: #fff;
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Stages */
+.stages {
+    display: flex;
+    flex-direction: column;
+}
+
+    .stages .stage {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+
+        .stages .stage .stage-title {
+            font-size: 21px;
+            position: sticky;
+            top: 56px;
+            padding: 1rem;
+            background: #fff;
+            z-index: 1;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            color: rgba(0,0,0,0.9);
+        }
+
+        .stages .stage .stage-content {
+            padding: 1rem;
+        }
+
+            .stages .stage .stage-content .stage-text {
+                color: rgba(0,0,0,0.75);
+            }
