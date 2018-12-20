@@ -1,8 +1,15 @@
 ﻿//- Define classes
 class Person {
-    constructor(name: string) {
-        this.name = name;
-        this.childrens = [];
+    constructor(index: number, parent = null) {
+        //- Set local variables
+        this.element = $('.visual-cell:eq(' + index + ')');
+        this.name = this.element.text();
+        this.parent = parent;
+        this.childrens = $('.visual-cell[tree-parent="' + index + '"]').get().map(e => new Person($(e).index('.visual-cell'), this));
+        this.index = index;
+
+        //- Set element data
+        this.element.data('person', this)
     }
 
     /**
@@ -10,10 +17,37 @@ class Person {
     */
     public name: string;
     /**
+    * The element of the current person
+    */
+    public element: JQuery;
+    /**
+    * The parent of the current person.
+    */
+    public parent: Person;
+    /**
     * Childrens of the current person.
     */
     public childrens: Person[];
+    /**
+    * The index of the current person
+    */
+    public index: number;
+
+    /**
+    * Retrives the current person hierarchy path
+    */
+    public onParents(handler) {
+        //- Call handler on current person
+        handler(this)
+
+        //- Check if parent is not null
+        if (this.parent != null)
+            this.parent.onParents(handler)
+    }
 }
+
+//- Create global variables
+var tree: Person, current: Person, targetName = "Trump";
 
 //- Define functions
 function start() {
@@ -29,6 +63,38 @@ function initialize() {
 
     //- Replace code templates with code text
     $('.code-template').each((i, e) => $(e).replaceWith(createCodeText($(e).text())));
+
+    //- Replace input templates
+    $('.input-template').each((i, e) => {
+        //- Create local variables
+        var input = $('<div class="user-input"></div>').append($.textinput($(e).attr('title'))).find('input').change(ev => {
+            //- Create local variables
+            var text = $(ev.currentTarget).val()
+            text = parseInt(text);
+
+            //- Define utility functions
+            function fibonacci(index) {
+                var x1 = 1, x2 = 0, x = 0;
+
+                for (var i = 0; i < index; i++) {
+                    x = x1 + x2;
+                    x1 = x2;
+                    x2 = x;
+                }
+
+                return x
+            }
+
+            //- Check if text is bigger then 0
+            if (text >= 0)
+                $('.input-text').text(fibonacci(text))
+            else
+                $('.input-text').text('...')
+        }).attr('type', 'number').end()
+
+        //- Replace input with element
+        $(e).replaceWith(input)
+    })
 
     //- Insert content info dialog button
     $('.stage-content-info').each((i, e) => {
@@ -51,6 +117,7 @@ function initialize() {
 
             //- Set info active
             $(e).appendTo('.stages')
+            $('html').get(0).scrollTop = 0
         }).attr({ shadow: 1, float: '1-2-3' })
         var icon2 = $.icon('fal fa-minus fa-fw', 'stage-dialog-button').click(ev => {
             //- Set classes
@@ -76,6 +143,28 @@ function initialize() {
 
     //- Insert stage title icon
     $('.stage-title[icon]').each((i, e) => $.icon('fas fa-' + $(e).attr('icon') + ' fa-fw', 'stage-title-icon').prependTo(e))
+
+    //- Insert step icons
+    $('.step-button').each((i, e) => {
+        //- Set icon
+        $.icon('fas fa-' + $(e).attr('icon') + ' fa-fw').appendTo(e)
+
+        //- Set icon attributes
+        $(e).attr({
+            shadow: '1',
+            float: '1-2-3'
+        })
+    })
+
+    //- Iterate through each cell
+    $('.visual-cell').each((i, e) => {
+
+        var text = $(e).text()
+        $(e).text('')
+
+        $.icon('fas fa-child fa-fw', 'visual-cell-icon').appendTo(e)
+        $.div('visual-cell-text', text).appendTo(e)
+    })
 }
 
 //- Family tree visualization
@@ -85,21 +174,133 @@ function initializeVisualization() {
 
     //- Set default CSS
     lastStage.css({
-        maxWidth: $('html').width(),
-        minWidth: lastStage.width(),
-        width: lastStage.width(),
+        width: $('html').width(),
     })
 
     //- Initialize srcoll animation
     $('html').scrollProgress(lastStage, (ev, diff, pos) => {
-        //- Set last stage css
         lastStage.css({
-            width: pos + "%",
+            width: $('html').width(),
         })
-        lastStage.siblings().css({
-            opacity: '+=' + -(diff / 70)
-        })
+        //- Set last stage css
+        //lastStage.css({ width: pos + "%", })
+        //lastStage.siblings().css({ opacity: '+=' + -(diff / 70) })
     })
+
+    //- Set events
+    $('.next-step-button').click(nextStep)
+    $('.prev-step-button').click(prevStep)
+
+    //- Create family tree
+    tree = current = new Person(0)
+
+    //- Set next step
+    nextStep();
+}
+function nextStep() {
+    //- Create local variables
+    var currentStep = $('.visual-cell.active')
+
+    //- Find next cell
+    if (currentStep.length == 0) {
+        //- Get next step
+        var nextStep = $('.visual-cell:eq(0)').addClass('active')
+
+        //- Verbose step
+        verboseStep(nextStep.data('person'))
+    }
+    else if (currentStep.is('.target')) {
+        return;
+    }
+    else {
+        //- Get next step element
+        var nextStep = $('.visual-cell[cell-index="' + (parseInt(currentStep.attr('cell-index')) + 1) + '"]')
+
+        //- Check if has next step
+        if (nextStep.length > 0) {
+            //- Remove current step class
+            currentStep.removeClass('active')
+
+            //- Add current step class
+            nextStep.addClass('active')
+
+            //- Verbose step
+            verboseStep(nextStep.data('person'))
+        }
+    }
+
+    //- Check if new step is target
+    if (nextStep.text() == targetName)
+        nextStep.addClass('target')
+}
+function prevStep() {
+    //- Create local variables
+    var currentStep = $('.visual-cell.active')
+
+    //- Check if current step is target
+    if (currentStep.is('.target'))
+        currentStep.removeClass('target')
+
+    //- Find next cell
+    if (currentStep.length == 0)
+        $('.visual-cell:eq(0)').addClass('active')
+    else {
+        //- Get next step element
+        var nextStep = $('.visual-cell[cell-index="' + (parseInt(currentStep.attr('cell-index')) - 1) + '"]')
+
+        //- Check if has next step
+        if (nextStep.length > 0) {
+            //- Remove current step class
+            currentStep.removeClass('active')
+
+            //- Add current step class
+            nextStep.addClass('active')
+
+            //- Remove last verbose step
+            $('.verbose-step:last').remove()
+        }
+    }
+}
+function verboseStep(child: Person) {
+    //- Create local variables
+    var parents = []
+    child.onParents((p: Person) => parents.push(p.name))
+    parents.reverse()
+
+    //- Create step element
+    var step = $.div('verbose-step').attr({
+        shadow: 1
+    })
+
+    //- Create step heirarchy path
+    var path = $.div('verbose-step-path')
+    parents.forEach((v, i) => {
+        //- Append parent name
+        path.append(v)
+
+        //- Append arrow right
+        if (parents.length - 1 > i)
+            path.append($.icon('fa fa-angle-right fa-fw', 'verbose-step-path-arrow'))
+    })
+
+    //- Create step text
+    var text = $.div('verbose-step-text')
+    if (child.name != targetName)
+        text.append([
+            $.div('', child.name).css({ display: 'inline-block', color: '#F44336' }),
+            ' is not "' + targetName + '"'
+        ])
+    else
+        text.append([
+            $.div('', child.name).css({ display: 'inline-block', color: '#00c5ae' }),
+            ' is "' + targetName + '"!'
+        ])
+
+    //- append step element
+    step.append([path, text]).appendTo('.verbose-steps')
+
+    if (child.parent != null)
+        step.get(0).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
 }
 
 //- Code text
@@ -154,7 +355,7 @@ function createCodeText(codeText: string) {
         //- Parse code lines
         var codeLines = codeText.split('\n').map(i => {
             //- Create local variables
-            var line = i.trim().replaceAll('\\n', '<br>')
+            var line = i.trim().replaceAll('\\n', '#')
             var tabs = line.matches(/\\T(\d+)/g)[0];
 
             //- Check if any tabs specified

@@ -1,11 +1,31 @@
 //- Define classes
 var Person = /** @class */ (function () {
-    function Person(name) {
-        this.name = name;
-        this.childrens = [];
+    function Person(index, parent) {
+        if (parent === void 0) { parent = null; }
+        var _this = this;
+        //- Set local variables
+        this.element = $('.visual-cell:eq(' + index + ')');
+        this.name = this.element.text();
+        this.parent = parent;
+        this.childrens = $('.visual-cell[tree-parent="' + index + '"]').get().map(function (e) { return new Person($(e).index('.visual-cell'), _this); });
+        this.index = index;
+        //- Set element data
+        this.element.data('person', this);
     }
+    /**
+    * Retrives the current person hierarchy path
+    */
+    Person.prototype.onParents = function (handler) {
+        //- Call handler on current person
+        handler(this);
+        //- Check if parent is not null
+        if (this.parent != null)
+            this.parent.onParents(handler);
+    };
     return Person;
 }());
+//- Create global variables
+var tree, current, targetName = "Trump";
 //- Define functions
 function start() {
     //- Initialize
@@ -18,6 +38,32 @@ function initialize() {
     $('html').get(0).scrollTop = 0;
     //- Replace code templates with code text
     $('.code-template').each(function (i, e) { return $(e).replaceWith(createCodeText($(e).text())); });
+    //- Replace input templates
+    $('.input-template').each(function (i, e) {
+        //- Create local variables
+        var input = $('<div class="user-input"></div>').append($.textinput($(e).attr('title'))).find('input').change(function (ev) {
+            //- Create local variables
+            var text = $(ev.currentTarget).val();
+            text = parseInt(text);
+            //- Define utility functions
+            function fibonacci(index) {
+                var x1 = 1, x2 = 0, x = 0;
+                for (var i = 0; i < index; i++) {
+                    x = x1 + x2;
+                    x1 = x2;
+                    x2 = x;
+                }
+                return x;
+            }
+            //- Check if text is bigger then 0
+            if (text >= 0)
+                $('.input-text').text(fibonacci(text));
+            else
+                $('.input-text').text('...');
+        }).attr('type', 'number').end();
+        //- Replace input with element
+        $(e).replaceWith(input);
+    });
     //- Insert content info dialog button
     $('.stage-content-info').each(function (i, e) {
         //- Create local variables
@@ -34,6 +80,7 @@ function initialize() {
             $('.stages').children().css('display', 'none');
             //- Set info active
             $(e).appendTo('.stages');
+            $('html').get(0).scrollTop = 0;
         }).attr({ shadow: 1, float: '1-2-3' });
         var icon2 = $.icon('fal fa-minus fa-fw', 'stage-dialog-button').click(function (ev) {
             //- Set classes
@@ -55,6 +102,23 @@ function initialize() {
     });
     //- Insert stage title icon
     $('.stage-title[icon]').each(function (i, e) { return $.icon('fas fa-' + $(e).attr('icon') + ' fa-fw', 'stage-title-icon').prependTo(e); });
+    //- Insert step icons
+    $('.step-button').each(function (i, e) {
+        //- Set icon
+        $.icon('fas fa-' + $(e).attr('icon') + ' fa-fw').appendTo(e);
+        //- Set icon attributes
+        $(e).attr({
+            shadow: '1',
+            float: '1-2-3'
+        });
+    });
+    //- Iterate through each cell
+    $('.visual-cell').each(function (i, e) {
+        var text = $(e).text();
+        $(e).text('');
+        $.icon('fas fa-child fa-fw', 'visual-cell-icon').appendTo(e);
+        $.div('visual-cell-text', text).appendTo(e);
+    });
 }
 //- Family tree visualization
 function initializeVisualization() {
@@ -62,20 +126,112 @@ function initializeVisualization() {
     var lastStage = $('.stages > .stage:last');
     //- Set default CSS
     lastStage.css({
-        maxWidth: $('html').width(),
-        minWidth: lastStage.width(),
-        width: lastStage.width(),
+        width: $('html').width(),
     });
     //- Initialize srcoll animation
     $('html').scrollProgress(lastStage, function (ev, diff, pos) {
-        //- Set last stage css
         lastStage.css({
-            width: pos + "%",
+            width: $('html').width(),
         });
-        lastStage.siblings().css({
-            opacity: '+=' + -(diff / 70)
-        });
+        //- Set last stage css
+        //lastStage.css({ width: pos + "%", })
+        //lastStage.siblings().css({ opacity: '+=' + -(diff / 70) })
     });
+    //- Set events
+    $('.next-step-button').click(nextStep);
+    $('.prev-step-button').click(prevStep);
+    //- Create family tree
+    tree = current = new Person(0);
+    //- Set next step
+    nextStep();
+}
+function nextStep() {
+    //- Create local variables
+    var currentStep = $('.visual-cell.active');
+    //- Find next cell
+    if (currentStep.length == 0) {
+        //- Get next step
+        var nextStep = $('.visual-cell:eq(0)').addClass('active');
+        //- Verbose step
+        verboseStep(nextStep.data('person'));
+    }
+    else if (currentStep.is('.target')) {
+        return;
+    }
+    else {
+        //- Get next step element
+        var nextStep = $('.visual-cell[cell-index="' + (parseInt(currentStep.attr('cell-index')) + 1) + '"]');
+        //- Check if has next step
+        if (nextStep.length > 0) {
+            //- Remove current step class
+            currentStep.removeClass('active');
+            //- Add current step class
+            nextStep.addClass('active');
+            //- Verbose step
+            verboseStep(nextStep.data('person'));
+        }
+    }
+    //- Check if new step is target
+    if (nextStep.text() == targetName)
+        nextStep.addClass('target');
+}
+function prevStep() {
+    //- Create local variables
+    var currentStep = $('.visual-cell.active');
+    //- Check if current step is target
+    if (currentStep.is('.target'))
+        currentStep.removeClass('target');
+    //- Find next cell
+    if (currentStep.length == 0)
+        $('.visual-cell:eq(0)').addClass('active');
+    else {
+        //- Get next step element
+        var nextStep = $('.visual-cell[cell-index="' + (parseInt(currentStep.attr('cell-index')) - 1) + '"]');
+        //- Check if has next step
+        if (nextStep.length > 0) {
+            //- Remove current step class
+            currentStep.removeClass('active');
+            //- Add current step class
+            nextStep.addClass('active');
+            //- Remove last verbose step
+            $('.verbose-step:last').remove();
+        }
+    }
+}
+function verboseStep(child) {
+    //- Create local variables
+    var parents = [];
+    child.onParents(function (p) { return parents.push(p.name); });
+    parents.reverse();
+    //- Create step element
+    var step = $.div('verbose-step').attr({
+        shadow: 1
+    });
+    //- Create step heirarchy path
+    var path = $.div('verbose-step-path');
+    parents.forEach(function (v, i) {
+        //- Append parent name
+        path.append(v);
+        //- Append arrow right
+        if (parents.length - 1 > i)
+            path.append($.icon('fa fa-angle-right fa-fw', 'verbose-step-path-arrow'));
+    });
+    //- Create step text
+    var text = $.div('verbose-step-text');
+    if (child.name != targetName)
+        text.append([
+            $.div('', child.name).css({ display: 'inline-block', color: '#F44336' }),
+            ' is not "' + targetName + '"'
+        ]);
+    else
+        text.append([
+            $.div('', child.name).css({ display: 'inline-block', color: '#00c5ae' }),
+            ' is "' + targetName + '"!'
+        ]);
+    //- append step element
+    step.append([path, text]).appendTo('.verbose-steps');
+    if (child.parent != null)
+        step.get(0).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
 }
 //- Code text
 function createCodeText(codeText) {
@@ -118,7 +274,7 @@ function createCodeText(codeText) {
         //- Parse code lines
         var codeLines = codeText.split('\n').map(function (i) {
             //- Create local variables
-            var line = i.trim().replaceAll('\\n', '<br>');
+            var line = i.trim().replaceAll('\\n', '#');
             var tabs = line.matches(/\\T(\d+)/g)[0];
             //- Check if any tabs specified
             if (tabs && tabs.length > 1) {

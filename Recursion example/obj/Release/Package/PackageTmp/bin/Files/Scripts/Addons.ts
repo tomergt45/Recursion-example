@@ -451,6 +451,28 @@ interface JQuery {
     bounds(boundaries: any, start: JQueryCoordinates | any[] | Element | JQuery | string | [number, number], full?: boolean): JQuery;
 
     /**
+    * Gets the scroll percentage progress of the first element in the current set of matched elements.
+    */
+    scrollProgress(): number;
+    /**
+    * Binds an event handler that executes only when the scroll percentage is above the specified minimum value.
+    */
+    scrollProgress(min, handler: (ev: JQueryEventObject, diff?, pos?) => any): JQuery;
+    /**
+    * Binds an event handler that executes only when the scroll percentage is within the specified min-max range.
+    */
+    scrollProgress(min, max, handler: (ev: JQueryEventObject, diff?, pos?) => any): JQuery;
+    /**
+    * Binds an event handler that executes only when the specified target is within viewport.
+    */
+    scrollProgress(target, handler: (ev: JQueryEventObject, diff?, pos?) => any): JQuery;
+
+    /**
+    * Scrolls the first element from the set of matched elements into view
+    */
+    scrollIntoView(): JQuery;
+
+    /**
     * Execute an event handler when certain events are being fired outside from one of the current elements in the set of matched elements, optionaly specify the events names.
     */
     out(handler: (eventObject: JQueryEventObject) => any, events?: string): JQuery;
@@ -1877,6 +1899,64 @@ $(function () {
             top: current.top,
         })
     }
+    jQuery.prototype.scrollProgress = function (...args) {
+        //- Create local variables
+        var target: any = $(this).get(0);
+
+        //- Replace html with window
+        if (target == $('html').get(0))
+            target = $(window).get(0)
+
+        //- Check specified arguments
+        if (args.length == 0 && $(this).length) {
+            return scrollPrecentage(target);
+        }
+        else {
+            //- Create local variables
+            var min = args[0], max = 100, callback, delta = null;
+
+            //- Parse arguments
+            if (typeof (args[1]) == 'number')
+                max = args[1], callback = args[2];
+            else
+                callback = args[1];
+
+            //- Bind scroll event
+            $(target).scroll(ev => {
+                //- Parse dynamic arguments
+                if (typeof (args[0]) == 'object' || typeof (args[0]) == 'string')
+                    min = scrollPrecentage(target, Math.max($(args[0]).get(0).offsetTop, 0)), max = scrollPrecentage(target, $(args[0]).get(0).offsetTop + $(args[0]).outerHeight(true)), callback = args[1];
+
+                //- Create local variables
+                var pos = $(ev.currentTarget).scrollProgress();
+
+                //- Check if pos within minmax
+                if (pos >= min && pos <= max && delta) {
+                    //- Save position relative to target
+                    var targetPos = pos;
+
+                    //- Set pos relative to minmax
+                    pos = ((pos - min) / (max - min)) * 100;
+
+                    //- Call callback function
+                    callback(ev, pos - delta, pos, targetPos);
+                }
+
+                //- Set delta
+                delta = pos;
+            })
+        }
+    }
+    jQuery.prototype.scrollIntoView = function () {
+        //- Create local variables
+        var offsetTop = $(this).get(0).offsetTop
+
+        //- Scroll current element into view
+        $('html').get(0).scrollTop = isIOS() ? -offsetTop : offsetTop
+
+        //- Return target
+        return $(this)
+    }
     jQuery.prototype.out = function (handler, events?) {
         //- Create local variables
         var This = this
@@ -2001,7 +2081,7 @@ $(function () {
             //- Bind events
             $(e).on({
                 [on]: rippleStart,
-                'mouseenter focusin': ev => {
+                'mouseenter ': ev => {
                     //- Get correct color
                     if ($(ev.currentTarget).attr('ripple-color').toLowerCase() == 'auto')
                         color = $(ev.currentTarget).css('color')
@@ -2024,6 +2104,9 @@ $(function () {
                                 overlayElement.css('background', overlay)
                                 break
                         }
+
+                        //- Remove previous overlay
+                        $(e).find('.ripple-effect-overlay').remove()
 
                         //- Append overlay element
                         overlayElement.appendTo(e)
@@ -3244,8 +3327,8 @@ $(function () {
         if (snack.outerWidth(true) >= $('html').width() / 2)
             snack.addClass('mobile')
 
-            //- return snackbar
-            return snack
+        //- return snackbar
+        return snack
     }
     jQuery.tabs = function (...args) {
         //- Create local variables
@@ -4324,6 +4407,81 @@ function parseBoolean(val) {
     }
     return new Boolean(val)
 }
+
+function isIOS() {
+    var x1 = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(<any>window).MSStream;
+    var x2 = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+    return x1 || x2;
+}
+
+const Clipboard = (function (window, document, navigator) {
+    var textArea,
+        copy;
+
+    function isOS() {
+        return navigator.userAgent.match(/ipad|iphone/i);
+    }
+
+    function createTextArea(text) {
+        textArea = document.createElement('textArea');
+        $(textArea).css({
+            'opacity': 0,
+            'width': 0,
+            'height': 0,
+            'position': 'fixed'
+        })
+        textArea.value = text;
+        document.body.appendChild(textArea);
+    }
+
+    function selectText() {
+        var range, selection;
+
+        if (isOS()) {
+            range = document.createRange();
+            range.selectNodeContents(textArea);
+            selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            textArea.setSelectionRange(0, 999999);
+        }
+        else
+            textArea.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+        createTextArea(text);
+        selectText();
+    };
+
+    return {
+        copy: copy
+    };
+})(window, document, navigator);
+
+function scrollPrecentage(target, scrollTop = null) {
+    //- Create local variables
+    var target: any = $(target).get(0), customTop = !!scrollTop;
+    var clientHeight = target.clientHeight, scrollHeight = target.scrollHeight;
+
+    //- Set scroll top
+    if (!customTop)
+        var scrollTop = target.scrollTop;
+
+    //- Check if specified target is window
+    if (target == window) {
+        if (!customTop)
+            scrollTop = $(window).scrollTop();
+        clientHeight = $(window).outerHeight(true), scrollHeight = $('html').get(0).scrollHeight;
+    }
+
+    //- Return target scroll percentage
+    return scrollTop / Math.abs((scrollHeight - clientHeight)) * 100;
+}
 // #endregion
 
 // #region On ready
@@ -4446,6 +4604,14 @@ $(function () {
 
     //- Initiate needed default hyper classes
     $('[overlay], [float], .action').mouseleave()
+
+    //- Identify IOS
+    if (isIOS())
+        $('html').attr('ios', '')
+    else if (navigator.userAgent.match(/(android)|(webOS)/i))
+        $('html').attr('mobile', '')
+    else
+        $('html').attr('desktop', '')
 })
 // #endregion
 

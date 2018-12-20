@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Title -->
-    <title>Report</title>
+    <title>Recursion</title>
 
     <!-- Style Sheets -->
     <link rel="stylesheet" type="text/css" href="Files/Styles/index.css" />
@@ -36,16 +36,29 @@
             <div class="stage-title" icon="info">Introduction</div>
             <div class="stage-content">
                 <div class="stage-text">In computer science, a recursive function is a function re-calling itself until a certain criteria is met.</div>
+                <div class="code-template">
+                    def hello():
+                    \T1hello()
+                </div>
             </div>
             <div class="stage-content-info">
                 <div class="stage-label">Other types of recursion</div>
                 <div class="stage-text">can be found not only in computer science but also in math, for example in the -</div>
+                <div class="gap-2"></div>
 
                 <div class="stage-label">Fibonacci-sequence</div>
                 <div class="stage-subtext">each index is just the sum of the two preceding digits,</div>
                 <img src="Files/Images/Sequence1.png" class="stage-image" alt="1, 1, 2, 3, 5, 8, 13..." />
                 <div class="stage-subtext">and a value for an index can simply be obtained as</div>
                 <img src="Files/Images/Sequence2.png" class="stage-image" alt="n_i = n_(i-1) + n_(i-2)" />
+                <div class="gap-1"></div>
+                <div class="stage-subtext">for fun, input an index from the sequence and try to predict the outcome</div>
+                <div style="display:flex; align-items:center;">
+                    <div class="input-template" title="index"></div>
+                    <div class="stage-subtext input-subtext">=</div>
+                    <div class="stage-text input-text">...</div>
+                </div>
+                <div class="gap-2"></div>
 
                 <div class="stage-label">History</div>
                 <div class="stage-text">recursion can be traced back to the 19th century, decades before any modern computers, although different from one another they do share their similarities.</div>
@@ -71,23 +84,23 @@
         <div class="stage">
             <div class="stage-title" icon="tree">Example - Family tree</div>
             <div class="stage-content">
-                <div class="stage-label">Finding 'Shlomo'</div>
-                <div class="stage-text">we'll look for 'shlomo' in an array of humans with human children using a -</div>
+                <div class="stage-label">Finding 'Trump'</div>
+                <div class="stage-text">we'll look for 'Trump' in an list of humans with human children using a -</div>
                 <div class="gap-2"></div>
 
                 <div class="stage-label">Recursive function procedure</div>
                 <div class="stage-text">we'll define a function that receives a human and checks the criteria</div>
-                <div class="code-template">human.name is 'Shlomo'</div>
+                <div class="code-template">human.name is 'Trump'</div>
                 <div class="stage-label">else</div>
                 <div class="stage-subtext">pass each individual child of the human to the current function (re-calling it).</div>
                 <div class="gap-2"></div>
 
                 <div class="stage-label">Resulting in a</div>
-                <div class="stage-text">loop that getting deeper and deeper within, until 'Shlomo' is found.</div>
+                <div class="stage-text">loop that getting deeper and deeper within, until 'Trump' is found.</div>
             </div>
         </div>
 
-        <div class="stage">
+        <div class="stage hidden" style="display:none !important">
             <div class="stage-title" icon="male">Python - Human class</div>
             <div class="stage-content">
                 <div class="stage-label">We'll define a human class</div>
@@ -122,12 +135,96 @@
             </div>
         </div>
 
+        <div class="stage">
+            <div class="stage-title" icon="superscript">Python - Function defintion</div>
+            <div class="stage-content">
+                <div class="stage-text">Here we'll define our recursive function, which will receive a person as an argument and will search for the person 'Trump'</div>
+                <div class="code-template">
+                    def findTrump(person):
+                    \T1result = None
+                    \n
+                    \T1if person.name == 'Trump':
+                    \T2return person
+                    \T1else:
+                    \T2for child in person.childrens:
+                    \T3if result != None:
+                    \T4result = findTrump(child)
+                    \n
+                    \T1return result
+                </div>
+                <div class="stage-subtext">Note: if you need a line-by-line breakdown you can press the nice (+) above :)</div>
+            </div>
+            <div class="stage-content-info">
+                <div class="stage-label">Let's break our code line by line</div>
+
+                <div class="code-template">def findTrump(person):</div>
+                <div class="stage-subtext">'findTrump' is our function name and this is our function definition</div>
+
+                <div class="code-template">result = None</div>
+                <div class="stage-subtext">defining a local variable 'result', which would eventually be returned from the function</div>
+
+                <div class="code-template">
+                    if person.name == 'Trump':
+                    \T1 return person
+                </div>
+                <div class="stage-subtext">checking if the specified person name is 'Trump', if it does then return it</div>
+
+                <div class="code-template">
+                    else:
+                    \T1for child in person.childrens:
+                </div>
+                <div class="stage-subtext">if current person name is not 'Trump' then check each individual child</div>
+
+                <div class="code-template">if result != None:</div>
+                <div class="stage-subtext">checking that 'Trump' was not previously found (and saved as 'result')</div>
+
+                <div class="code-template">result = findTrump(child)</div>
+                <div class="stage-subtext">pass each individual child to the current function, recursively :D</div>
+
+                <div class="code-template">return result</div>
+                <div class="stage-subtext">and our grand finale, return our result</div>
+
+            </div>
+        </div>
+
         <div class="stage last">
             <div class="stage-title" icon="cubes">Visualization - family tree</div>
             <div class="stage-content">
-                <div class="stage-label">Hello</div>
+                <div class="visual-wrapper">
+                    <div class="visual-tree">
+                        <div class="visual-row">
+                            <div class="visual-cell" cell-index="0">Parent</div>
+                        </div>
+
+                        <div class="visual-row">
+                            <div class="visual-cell" tree-parent="0" cell-index="1">sister</div>
+                            <div class="visual-cell" tree-parent="0" cell-index="4">myself</div>
+                            <div class="visual-cell" tree-parent="0" cell-index="8">the better sister</div>
+                        </div>
+
+                        <div class="visual-row">
+                            <div class="visual-cell" tree-parent="1" cell-index="2">oliver</div>
+                            <div class="visual-cell" tree-parent="1" cell-index="3">jack</div>
+                            <div class="visual-cell" tree-parent="2" cell-index="5">harry</div>
+                            <div class="visual-cell" tree-parent="2" cell-index="6">charlie</div>
+                            <div class="visual-cell" tree-parent="2" cell-index="7">jacob</div>
+                            <div class="visual-cell" tree-parent="3" cell-index="9">Trump</div>
+                            <div class="visual-cell" tree-parent="3" cell-index="10">henry</div>
+                        </div>
+                    </div>
+                    <div class="visual-verbose">
+                        <div class="verbose-steps">
+
+                        </div>
+                        <div class="visual-step-buttons">
+                            <div class="step-button prev-step-button" icon="angle-left"></div>
+                            <div class="step-button next-step-button" icon="angle-right"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="credit">Created by - Tomer horowitz (tomergt89@gmail.com)</div>
 </body>
 </html>

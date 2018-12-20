@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Recursion example",
-    "\\Recursion example\\Files"
+    "\\Recursion example\\Files",
+    "\\Recursion example\\Files\\Refrences",
+    "\\Recursion example\\Files\\Scripts",
+    "\\Recursion example\\Files\\Styles"
   ],
-  "SelectedNode": "\\Recursion example\\Files",
+  "SelectedNode": "\\Recursion example\\index.html",
   "PreviewInSolutionExplorer": false
 }

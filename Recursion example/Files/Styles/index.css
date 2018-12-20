@@ -26,7 +26,8 @@ html {
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  position: relative; }
+  position: relative;
+  margin-bottom: 5em; }
   .stages .stage {
     display: flex;
     flex-direction: column;
@@ -39,7 +40,12 @@ html {
     .stages .stage.last {
       position: sticky;
       top: 0;
-      min-height: 55vh; }
+      /*max-width: inherit !important;*/
+      max-width: 1500px !important;
+      width: 100%;
+      margin-top: 5em; }
+    .stages .stage.hidden {
+      display: none !important; }
     .stages .stage .stage-title {
       position: sticky;
       position: -webkit-sticky;
@@ -53,7 +59,8 @@ html {
       font-size: 16px;
       display: flex;
       align-items: center;
-      line-height: 2.5; }
+      line-height: 2.5;
+      user-select: none; }
       .stages .stage .stage-title .stage-title-icon {
         margin-right: 1em;
         color: #2196F3; }
@@ -97,6 +104,8 @@ html {
       .stages .stage .stage-content .stage-image {
         padding: 1em 0;
         width: 10em; }
+    .stages .stage.last .stage-content {
+      padding: 0; }
     .stages .stage .stage-content-info {
       display: none; }
   .stages .stage-content-info {
@@ -105,6 +114,12 @@ html {
     display: flex;
     background: #fff;
     z-index: 1; }
+    .stages .stage-content-info .stage-content .input-subtext {
+      padding: 0em 1em; }
+    .stages .stage-content-info .stage-content .user-input {
+      width: fit-content; }
+      .stages .stage-content-info .stage-content .user-input .text-input-element-label {
+        display: none !important; }
     .stages .stage-content-info.hide .stage-content {
       animation: fadeOut 0.25s forwards, slideMarginTopIn 0.25s cubic-bezier(0.03, 0, 0.25, 0.98) forwards;
       margin-top: 15%; }
@@ -145,6 +160,101 @@ html {
     margin-bottom: 0.2em;
     color: rgba(0, 0, 0, 0.4); }
 
+/* Visual wrapper */
+.visual-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  min-height: 40vh; }
+  .visual-wrapper .visual-tree {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto; }
+    .visual-wrapper .visual-tree .visual-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      padding: 1em 0em;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 0.5em; }
+      .visual-wrapper .visual-tree .visual-row .visual-cell {
+        user-select: none;
+        pointer-events: none;
+        flex: 1;
+        padding: .5em;
+        margin: 0.5em;
+        text-transform: capitalize;
+        transition: .2s ease-out box-shadow;
+        border-radius: 4px; }
+        .visual-wrapper .visual-tree .visual-row .visual-cell.active {
+          box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
+        .visual-wrapper .visual-tree .visual-row .visual-cell.target {
+          border: 1px solid #00c5ae; }
+        .visual-wrapper .visual-tree .visual-row .visual-cell .visual-cell-icon {
+          font-size: 22px;
+          color: #2194f3; }
+        .visual-wrapper .visual-tree .visual-row .visual-cell .visual-cell-text {
+          font-size: 10px;
+          padding: 0.5em;
+          color: rgba(0, 0, 0, 0.7); }
+  .visual-wrapper .visual-verbose {
+    width: 50%;
+    background: rgba(0, 0, 0, 0.015);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+    .visual-wrapper .visual-verbose .verbose-steps {
+      padding: 1em;
+      overflow: auto;
+      height: 100%;
+      padding-bottom: 4em; }
+      .visual-wrapper .visual-verbose .verbose-steps .verbose-step {
+        padding: 0.5em;
+        user-select: none;
+        pointer-events: none;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 1em;
+        text-transform: capitalize;
+        background: #fff; }
+        .visual-wrapper .visual-verbose .verbose-steps .verbose-step .verbose-step-path {
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.3); }
+        .visual-wrapper .visual-verbose .verbose-steps .verbose-step .verbose-step-text {
+          font-size: 12px;
+          margin: 0.5em 0em;
+          color: rgba(0, 0, 0, 0.75); }
+    .visual-wrapper .visual-verbose .visual-step-buttons {
+      display: flex;
+      z-index: 999;
+      width: 100%;
+      justify-content: space-evenly;
+      font-size: 26px;
+      color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      bottom: 0.5em; }
+      .visual-wrapper .visual-verbose .visual-step-buttons .step-button {
+        border-radius: 50%;
+        display: flex;
+        padding: 0.1em 0em;
+        cursor: pointer;
+        background: #fff; }
+
+/* Credit */
+.credit {
+  padding: 1em;
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.5);
+  float: right;
+  user-select: none; }
+
 /* Media queries */
 @media (min-width: 1024px) {
   html {
@@ -153,3 +263,12 @@ html {
     zoom: 1.6; }
   html[desktop] .stage {
     max-width: 700px; } }
+
+@media (max-width: 1024px) {
+  .visual-wrapper {
+    background: #fff; }
+  .visual-wrapper .visual-verbose {
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0.01); }
+  .visual-wrapper .visual-tree {
+    display: none; } }

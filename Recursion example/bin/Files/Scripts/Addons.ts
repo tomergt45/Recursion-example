@@ -468,6 +468,11 @@ interface JQuery {
     scrollProgress(target, handler: (ev: JQueryEventObject, diff?, pos?) => any): JQuery;
 
     /**
+    * Scrolls the first element from the set of matched elements into view
+    */
+    scrollIntoView(): JQuery;
+
+    /**
     * Execute an event handler when certain events are being fired outside from one of the current elements in the set of matched elements, optionaly specify the events names.
     */
     out(handler: (eventObject: JQueryEventObject) => any, events?: string): JQuery;
@@ -1941,6 +1946,16 @@ $(function () {
                 delta = pos;
             })
         }
+    }
+    jQuery.prototype.scrollIntoView = function () {
+        //- Create local variables
+        var offsetTop = $(this).get(0).offsetTop
+
+        //- Scroll current element into view
+        $('html').get(0).scrollTop = isIOS() ? -offsetTop : offsetTop
+
+        //- Return target
+        return $(this)
     }
     jQuery.prototype.out = function (handler, events?) {
         //- Create local variables
@@ -4448,7 +4463,7 @@ const Clipboard = (function (window, document, navigator) {
     };
 })(window, document, navigator);
 
-function scrollPrecentage(target, scrollTop=null) {
+function scrollPrecentage(target, scrollTop = null) {
     //- Create local variables
     var target: any = $(target).get(0), customTop = !!scrollTop;
     var clientHeight = target.clientHeight, scrollHeight = target.scrollHeight;
